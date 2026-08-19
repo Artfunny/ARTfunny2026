@@ -370,3 +370,8 @@ p {
   display: block;
   cursor: pointer;
 }
+
+/* Message Me bottle button */
+a img[alt="Message Me"]:hover {
+  transform: scale(1.08);
+}

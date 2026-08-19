@@ -5,6 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | ARTfunny</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-form {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 520px;
+      margin: 1.5rem auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #f1f5f9;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #22d3ee;
+    }
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: #22d3ee;
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #67e8f9;
+    }
+    .message-bottle {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .message-bottle img {
+      max-height: 140px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -23,22 +82,40 @@
 
   <main>
     <h1>Contact</h1>
-    <p class="text-center">Let’s create something great. Get in touch for commissions, collaborations or just to say hello.</p>
+    <p class="text-center">Send a message in a bottle — I’ll get back to you as soon as I can.</p>
 
-    <div class="contact-box">
-      <h2 style="margin-top:0; color:#22d3ee;">Message Me</h2>
-      <p>The quickest way to reach me is on X (Twitter):</p>
-      
-      <div class="contact-links">
-        <a href="https://x.com/artfunny5" target="_blank" rel="noopener" class="btn btn-primary">
-          DM @artfunny5 on X
-        </a>
-      </div>
-
-      <p style="margin-top:2rem; font-size:0.95rem; color:#94a3b8;">
-        Please include a short description of your project, timeline and any reference images if possible.
-      </p>
+    <div class="message-bottle">
+      <img src="images/MessageMe.png" alt="Message Me">
     </div>
+
+    <!-- 
+      FORMSPREE SETUP (free):
+      1. Go to https://formspree.io and create a free account
+      2. Create a new form
+      3. Copy the form endpoint (looks like https://formspree.io/f/xxxxxxxx)
+      4. Replace the action URL below with your endpoint
+      5. In Formspree settings → Autoresponder, turn it on and set the message to:
+         "SOS Message received! Thanks for contacting ARTfunny – Gary Beaumont"
+    -->
+    <form class="contact-form" action="https://formspree.io/f/mqpzwdad" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="Name">
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Tell me about your project or idea..."></textarea>
+
+      <!-- This makes Formspree send the reply to you without showing your address on the page -->
+      <input type="hidden" name="_subject" value="New message from ARTfunny website">
+      
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p class="text-center" style="margin-top:1.5rem; color:#94a3b8; font-size:0.95rem;">
+      Or reach me on X: <a href="https://x.com/artfunny5" target="_blank" rel="noopener">@artfunny5</a>
+    </p>
   </main>
 
   <footer class="site-footer">
