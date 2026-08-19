@@ -358,3 +358,15 @@ p {
 
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
+
+.gallery-item a {
+  display: block;
+  cursor: zoom-in;
+}
+.gallery-item a:hover img {
+  opacity: 0.9;
+}
+.video-card a {
+  display: block;
+  cursor: pointer;
+}
