@@ -84,8 +84,8 @@
     <h1>Contact</h1>
     <p class="text-center">Send a message in a bottle — I’ll get back to you as soon as I can.</p>
 
-    <div class="message-bottle">
-      <img src="images/MessageMe.png" alt="Message Me">
+    <div class="message-bottle" style="text-align:center; margin-bottom:1.5rem;">
+      <img src="images/MessageMe.png" alt="Message Me" style="max-height:180px; transition:transform 0.2s;">
     </div>
 
     <!-- 
@@ -97,7 +97,7 @@
       5. In Formspree settings → Autoresponder, turn it on and set the message to:
          "SOS Message received! Thanks for contacting ARTfunny – Gary Beaumont"
     -->
-    <form class="contact-form" action="https://formspree.io/f/mqpzwdad" method="POST">
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required placeholder="Name">
 
