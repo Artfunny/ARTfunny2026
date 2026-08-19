@@ -1,0 +1,107 @@
+
+<!-- saved from url=(0089)https://www-artfunny-co-uk.filesusr.com/html/1ea936_cfa2784c1cfa0c764bd677e991acbd59.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>!doctype html&gt;
+
+    
+        <style> 
+            body, html {
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+            }
+        </style>
+    
+
+    
+        <script>
+            const cursorPosition = {x: 0, y: 0};
+            //Change the colors the particles can have here, replace with any number of hex-codes you want. Seperate with comma's, and place hex-codes between apostropes.
+            const particleColorsList = ["#064273", "#76b6c4", "#7fcdff", "#1da2d8", "#def3f6"];
+            const currentParticles = [];
+            
+            window.addEventListener("mousemove", function(e) {
+                cursorPosition.x = e.x;
+                cursorPosition.y = e.y;
+
+                const randomColor = particleColorsList[Math.floor(Math.random()*particleColorsList.length)];
+                addNewParticle(cursorPosition.x, cursorPosition.y, randomColor);
+            })
+
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+
+            function addNewParticle(x, y, color) {
+                const newParticle = new Particle();
+                newParticle.initialSetup(x, y, color);
+                currentParticles.push(newParticle);
+            }
+
+            function updateParticles() {
+                for (let i = 0; i < currentParticles.length; i++) {
+                    currentParticles[i].moveParticle();
+                }
+
+                for (let i = currentParticles.length -1; i >= 0; i--) {
+                    if (currentParticles[i].lifeSpan < 0) {
+                        currentParticles[i].removeParticle();
+                        currentParticles.splice(i, 1);
+                    }
+                }
+            }
+
+
+            function Particle() {
+                //Change the character that is used for every particle. Can be any character or emoji (https://emojilo.com/). Place between apostrophes.
+                this.character = "*";
+                //Change the time the particles are visible on the screen (in milliseconds). Needs to be replaced in two places. Part 1/2. 
+                this.lifeSpan = 120;
+                //Change the size of the particles (fontSize).
+                this.initialStyling = {
+                    "display": "block",
+                    "position": "absolute",
+                    "pointerEvents": "none",
+                    "z-index": "100",
+                    "fontSize": "20px",
+                    "will-change": "transform"
+                };
+                
+                this.initialSetup = function(x, y, color) {
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+
+                    this.position = {x: x - 10, y: y - 20};
+                    this.initialStyling.color = color;
+
+                    this.particleElement = document.createElement("span");
+                    this.particleElement.innerHTML = this.character;
+
+                    for (var key in this.initialStyling) {
+                        this.particleElement.style[key] = this.initialStyling[key];
+                    }
+                    this.moveParticle();
+
+                    document.body.appendChild(this.particleElement);
+                }
+
+                this.moveParticle = function() {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+
+                    //Change the time the particles are visible on the screen (in milliseconds). Needs to be replaced in two places. Replace in (this.lifeSpan / number). Part 2/2. 
+                    this.particleElement.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+
+                this.removeParticle = function() {
+                    this.particleElement.parentNode.removeChild(this.particleElement);
+                }
+            }
+
+            loop();
+      </script>
+
+</body></html>
