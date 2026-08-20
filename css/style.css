@@ -380,3 +380,10 @@ p {
 a img[alt="Message Me"]:hover {
   transform: scale(1.08);
 }
+
+.logo-video {
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
