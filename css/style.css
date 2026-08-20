@@ -51,12 +51,15 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.25rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .logo-row img {
   max-height: 110px;
   width: auto;
+  object-fit: contain;
 }
 
 .main-nav {
@@ -343,8 +346,10 @@ p {
 
 @media (max-width: 600px) {
   .logo-row img {
-    max-height: 80px;
-  }
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+}
   h1 {
     font-size: 1.8rem;
   }
