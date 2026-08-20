@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARToons | ARTfunny</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .video-card {
+      cursor: pointer;
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -33,139 +44,99 @@
   <main>
     <h1>ARToons</h1>
     <p class="text-center">Short cartoon sequences and ARToon videos.<br>
-    Hover to play · Click to open full screen in a new tab.</p>
+    Hover to play · Click to open full player in a new tab.</p>
 
     <div class="video-grid">
 
-      <div class="video-card">
-        <a href="videos/AT_Koala_Climb_01.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/AT_Koala_Climb_01.webm" type="video/webm">
-            <source src="videos/AT_Koala_Climb_01.mov" type="video/quicktime">
-            <source src="videos/AT_Koala_Climb_01.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="AT_Koala_Climb_01.mov" data-title="AT Koala Climb">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/AT_Koala_Climb_01.webm" type="video/webm">
+          <source src="videos/AT_Koala_Climb_01.mov" type="video/quicktime">
+          <source src="videos/AT_Koala_Climb_01.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>AT Koala Climb</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/Nut_Cracker.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/Nut_Cracker.webm" type="video/webm">
-            <source src="videos/Nut_Cracker.mov" type="video/quicktime">
-            <source src="videos/Nut_Cracker.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="Nut_Cracker.mov" data-title="Nut Cracker">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/Nut_Cracker.webm" type="video/webm">
+          <source src="videos/Nut_Cracker.mov" type="video/quicktime">
+          <source src="videos/Nut_Cracker.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Nut Cracker</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/SandCastle0140-0308.mkv" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/SandCastle0140-0308.webm" type="video/webm">
-            <source src="videos/SandCastle0140-0308.mkv" type="video/x-matroska">
-            <source src="videos/SandCastle0140-0308.mkv" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="SandCastle0140-0308.mkv" data-title="Sand Castle">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/SandCastle0140-0308.webm" type="video/webm">
+          <source src="videos/SandCastle0140-0308.mkv" type="video/x-matroska">
+          <source src="videos/SandCastle0140-0308.mkv" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Sand Castle</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/WitchHouse1.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/WitchHouse1.webm" type="video/webm">
-            <source src="videos/WitchHouse1.mov" type="video/quicktime">
-            <source src="videos/WitchHouse1.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="WitchHouse1.mov" data-title="Witch House">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/WitchHouse1.webm" type="video/webm">
+          <source src="videos/WitchHouse1.mov" type="video/quicktime">
+          <source src="videos/WitchHouse1.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Witch House</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/Balloons_02.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/Balloons_02.webm" type="video/webm">
-            <source src="videos/Balloons_02.mov" type="video/quicktime">
-            <source src="videos/Balloons_02.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="Balloons_02.mov" data-title="Balloons">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/Balloons_02.webm" type="video/webm">
+          <source src="videos/Balloons_02.mov" type="video/quicktime">
+          <source src="videos/Balloons_02.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Balloons</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/It_Happens0001-0260.mp4" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/It_Happens0001-0260.webm" type="video/webm">
-            <source src="videos/It_Happens0001-0260.mp4" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="It_Happens0001-0260.mp4" data-title="It Happens">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/It_Happens0001-0260.webm" type="video/webm">
+          <source src="videos/It_Happens0001-0260.mp4" type="video/mp4">
+        </video>
         <div class="info">
           <h3>It Happens</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/Manger2.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/Manger2.webm" type="video/webm">
-            <source src="videos/Manger2.mov" type="video/quicktime">
-            <source src="videos/Manger2.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="Manger2.mov" data-title="Manger">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/Manger2.webm" type="video/webm">
+          <source src="videos/Manger2.mov" type="video/quicktime">
+          <source src="videos/Manger2.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Manger</h3>
           <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
-      <div class="video-card">
-        <a href="videos/MyRock_03.mov" target="_blank" rel="noopener" style="display:block;">
-          <video muted loop playsinline
-            onmouseover="this.play()"
-            onmouseout="this.pause(); this.currentTime=0;"
-            style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/MyRock_03.webm" type="video/webm">
-            <source src="videos/MyRock_03.mov" type="video/quicktime">
-            <source src="videos/MyRock_03.mov" type="video/mp4">
-          </video>
-        </a>
+      <div class="video-card" data-video="MyRock_03.mov" data-title="My Rock">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/MyRock_03.webm" type="video/webm">
+          <source src="videos/MyRock_03.mov" type="video/quicktime">
+          <source src="videos/MyRock_03.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>My Rock</h3>
           <p>Hover to play · Click for full screen</p>
@@ -179,5 +150,29 @@
     <p>ARTfunny © 2026 · Digital Cartoon Artwork</p>
     <p><a href="https://x.com/artfunny5" target="_blank" rel="noopener">@artfunny5</a></p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.video-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (!video) return;
+
+      // Hover to play
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
+      // Click to open player in new tab
+      card.addEventListener('click', () => {
+        const file = card.dataset.video;
+        const title = card.dataset.title || '';
+        const url = 'player.html?v=' + encodeURIComponent(file) + '&t=' + encodeURIComponent(title);
+        window.open(url, '_blank');
+      });
+    });
+  </script>
 </body>
 </html>

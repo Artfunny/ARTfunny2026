@@ -39,18 +39,15 @@
     </p>
 
     <div class="video-grid">
-      <div class="video-card">
-        <a href="videos/SCT_Financial_Advice.mov" target="_blank" rel="noopener" style="display:block;">
-          <video controls playsinline style="width:100%; aspect-ratio:16/9; background:#000; pointer-events:none;">
-            <source src="videos/SCT_Financial_Advice.webm" type="video/webm">
-            <source src="videos/SCT_Financial_Advice.mov" type="video/quicktime">
-            <source src="videos/SCT_Financial_Advice.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </a>
+      <div class="video-card" data-video="SCT_Financial_Advice.mov" data-title="Stone Cold Truth – Intro" style="cursor:pointer;">
+        <video muted loop playsinline preload="metadata" style="width:100%; aspect-ratio:16/9; background:#000;">
+          <source src="videos/SCT_Financial_Advice.webm" type="video/webm">
+          <source src="videos/SCT_Financial_Advice.mov" type="video/quicktime">
+          <source src="videos/SCT_Financial_Advice.mov" type="video/mp4">
+        </video>
         <div class="info">
           <h3>Stone Cold Truth – Intro</h3>
-          <p>SCT Financial Advice · Click to open full screen</p>
+          <p>Hover to play · Click for full screen</p>
         </div>
       </div>
 
@@ -95,5 +92,19 @@
     <p>ARTfunny © 2026 · Digital Cartoon Artwork</p>
     <p><a href="https://x.com/artfunny5" target="_blank" rel="noopener">@artfunny5</a></p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.video-card[data-video]').forEach(card => {
+      const video = card.querySelector('video');
+      if (!video) return;
+      card.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
+      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      card.addEventListener('click', () => {
+        const file = card.dataset.video;
+        const title = card.dataset.title || '';
+        window.open('player.html?v=' + encodeURIComponent(file) + '&t=' + encodeURIComponent(title), '_blank');
+      });
+    });
+  </script>
 </body>
 </html>

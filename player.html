@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARTfunny Player</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, sans-serif;
+      color: #e2e8f0;
+    }
+    .top {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.7);
+      z-index: 10;
+    }
+    .top a {
+      color: #22d3ee;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .top a:hover { color: #fbbf24; }
+    video {
+      max-width: 95vw;
+      max-height: 85vh;
+      background: #000;
+      border-radius: 8px;
+    }
+    .title {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a href="javascript:window.close();">← Close</a>
+    <a href="artoons.html">Back to ARToons</a>
+  </div>
+
+  <video id="player" controls autoplay playsinline></video>
+  <p class="title" id="title"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get('v');
+    const title = params.get('t') || '';
+    const video = document.getElementById('player');
+    const titleEl = document.getElementById('title');
+
+    if (src) {
+      // Prefer webm, fall back to original extension if provided
+      const base = src.replace(/\.(webm|mov|mp4|mkv)$/i, '');
+      const sources = [
+        { src: base + '.webm', type: 'video/webm' },
+        { src: src, type: '' },
+        { src: base + '.mp4', type: 'video/mp4' },
+        { src: base + '.mov', type: 'video/quicktime' }
+      ];
+      sources.forEach(s => {
+        const source = document.createElement('source');
+        source.src = s.src.startsWith('videos/') ? s.src : 'videos/' + s.src;
+        if (s.type) source.type = s.type;
+        video.appendChild(source);
+      });
+      video.load();
+      titleEl.textContent = title || src;
+      document.title = (title || src) + ' | ARTfunny';
+    } else {
+      titleEl.textContent = 'No video specified';
+    }
+  </script>
+</body>
+</html>
