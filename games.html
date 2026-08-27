@@ -44,6 +44,19 @@
       flex-wrap: wrap;
       margin-top: 1.25rem;
     }
+    .arcade-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto 2rem;
+    }
+    .arcade-logo-wrap img {
+      max-height: 160px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -74,18 +87,23 @@
   <main>
     <h1>Games</h1>
 
-    <div style="text-align: center; margin: 0 auto 2rem; max-width: 900px;">
-      <h2 style="margin-top: 0; color: #22d3ee;">Aurora Garden</h2>
+    <div class="arcade-logo-wrap">
+      <img src="images/ArtFunny_Arcade.webp" alt="ArtFunny Arcade"
+           onerror="this.onerror=null;this.src='images/AFA_Dusty_Logo.webp';">
+    </div>
+
+    <div style="text-align: center; margin: 0 auto 2.5rem; max-width: 1100px;">
+      <h2 style="margin-top: 0; color: #22d3ee;">Face Invaders</h2>
       <p style="color: #94a3b8; margin-bottom: 1rem;">Play free in your browser</p>
       <p style="margin-bottom: 1.25rem;">
         <a href="https://aurora-garden-pixel-wind.grok.me" target="_blank" rel="noopener" class="btn btn-primary">
-          Play Aurora Garden
+          Play Face Invaders
         </a>
       </p>
       <div class="game-frame-wrap" style="margin-bottom: 0;">
         <iframe
           src="https://aurora-garden-pixel-wind.grok.me"
-          title="Aurora Garden"
+          title="Face Invaders"
           allow="fullscreen; gamepad; autoplay"
           allowfullscreen
           loading="lazy">
@@ -93,16 +111,23 @@
       </div>
     </div>
 
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 0 auto 1.5rem;">
-      <img src="images/AFA_Dusty_Logo.webp" alt="AFA Dusty Logo" style="max-height: 140px; width: auto; display: block; margin: 0 auto;">
-    </div>
-
-    <div style="max-width: 560px; margin: 0 auto 2rem; text-align: center;">
-      <h2 style="margin-top: 0; color: #22d3ee;">Hombre - Single Player - Shoot-em-Up click the image / Link below to play for free in your Browser</h2>
-      <blockquote class="twitter-tweet" data-media-max-width="560">
-        <p lang="en" dir="ltr">Hombre: Tie down your Controller &amp; Ride into Town to take on the &#39;Hole in the Floor Gang&#39; Made with Grok and my cartoon game Assets. <a href="https://x.com/grok?ref_src=twsrc%5Etfw">@grok</a> is amazing this was made in less than a day ! — try it out: <a href="https://t.co/ifIGZbPbUs">https://t.co/ifIGZbPbUs</a></p>
-        &mdash; ArtFunny (@ArtFunny5) <a href="https://x.com/ArtFunny5/status/2091497287696486704?ref_src=twsrc%5Etfw">August 23, 2026</a>
-      </blockquote>
+    <div style="text-align: center; margin: 0 auto 2.5rem; max-width: 1100px;">
+      <h2 style="margin-top: 0; color: #22d3ee;">Roller Ghoster</h2>
+      <p style="color: #94a3b8; margin-bottom: 1rem;">Play free in your browser</p>
+      <p style="margin-bottom: 1.25rem;">
+        <a href="https://gem-sunny-forge-bamboo.grok.me" target="_blank" rel="noopener" class="btn btn-primary">
+          Play Roller Ghoster
+        </a>
+      </p>
+      <div class="game-frame-wrap" style="margin-bottom: 0;">
+        <iframe
+          src="https://gem-sunny-forge-bamboo.grok.me"
+          title="Roller Ghoster"
+          allow="fullscreen; gamepad; autoplay"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
     </div>
 
     <div class="game-intro">
@@ -114,7 +139,6 @@
     </div>
 
     <div class="game-frame-wrap">
-      <!-- Unity WebGL build entry point -->
       <iframe
         src="Games/Hombre_2WEBGL/index.html"
         title="Hombre – Multiplayer Shoot-Em-Up"
@@ -140,6 +164,5 @@
     <p>ARTfunny © 2026 · Digital Cartoon Artwork</p>
     <p><a href="https://x.com/artfunny5" target="_blank" rel="noopener">@artfunny5</a></p>
   </footer>
-  <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
