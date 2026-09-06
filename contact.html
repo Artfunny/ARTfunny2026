@@ -98,16 +98,7 @@
       <img src="images/MessageMe.png" alt="Message Me" style="max-height:180px; transition:transform 0.2s;">
     </div>
 
-    <!-- 
-      FORMSPREE SETUP (free):
-      1. Go to https://formspree.io and create a free account
-      2. Create a new form
-      3. Copy the form endpoint (looks like https://formspree.io/f/xxxxxxxx)
-      4. Replace the action URL below with your endpoint
-      5. In Formspree settings → Autoresponder, turn it on and set the message to:
-         "SOS Message received! Thanks for contacting ARTfunny – Gary Beaumont"
-    -->
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="contact-form" action="https://formspree.io/f/mqpzwdad" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required placeholder="Name">
 
@@ -117,9 +108,8 @@
       <label for="message">Message</label>
       <textarea id="message" name="message" required placeholder="Tell me about your project or idea..."></textarea>
 
-      <!-- This makes Formspree send the reply to you without showing your address on the page -->
       <input type="hidden" name="_subject" value="New message from ARTfunny website">
-      
+
       <button type="submit">Send Message</button>
     </form>
 
